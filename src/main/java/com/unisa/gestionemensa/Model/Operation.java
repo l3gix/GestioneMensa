@@ -13,6 +13,5 @@ public class Operation
     private int id;
     private String data;
     private double importo;
-    @ManyToOne
     private String matricola;
 }
