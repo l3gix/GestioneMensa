@@ -1,3 +1,8 @@
+window.addEventListener("load", (event) => {
+    event.preventDefault();
+    checksessionok();
+});
+
 function register(event)
 {
     event.preventDefault();
@@ -7,6 +12,8 @@ function register(event)
     var nome = document.getElementById("nome").value;
     var matricola = document.getElementById("matricola").value;
     var cognome = document.getElementById("cognome").value;
+
+
 
     if (!validate(matricola,password,nome,cognome,username)) {
         console.log("NON FUNZIONA");
@@ -37,6 +44,12 @@ function register(event)
         });
     }
 }
+
+function checksessionok()
+{
+    if(sessionStorage.getItem('user') != null) window.location.href = 'index.html';
+}
+
 
 function validate(matricola,password,nome,cognome,username) {
 

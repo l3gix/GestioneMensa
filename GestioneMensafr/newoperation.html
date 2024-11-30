@@ -3,12 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Operation</title>
+    <link rel="stylesheet" href="newoperationcss.css">
 </head>
 <body>
-    <input type="text" id="importo">
-    <input type="text" id="data">
-    <button onclick="newoperation()">trasazione</button>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar-left">
+
+            <svg xmlns="http://www.w3.org/2000/svg"  class="navbar-icon" viewBox="0 0 16 16" fill="white" onclick="window.location.href = 'index.html';">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+            </svg>
+        </div>
+        <div class="navbar-center">
+            <h1>Nuova Transazione</h1> <!-- Titolo della Navbar -->
+        </div>
+    </nav>
+
+    <!-- Contenitore principale -->
+    <div class="main-container">
+        <div class="login-container">
+            <div class="login-form">
+                <h2>Nuova Transazione</h2>
+
+                <div class="input-group">
+                    <select name="" id="chose" >
+                        <option value="0">Accredioto</option>
+                        <option value="1">Transazione</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="importo" placeholder="Importo">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="data" placeholder="gg/mm/aa">
+                </div>
+                <button onclick="newoperation()" class="login-button">Operazione</button>
+            </div>
+        </div>
+        <div class="card" id="card">
+        
+        </div>
+    </div>
 
     <script src="newoperation.js"></script>
 </body>

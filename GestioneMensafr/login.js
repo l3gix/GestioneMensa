@@ -1,9 +1,15 @@
+window.addEventListener("load", (event) => {
+    event.preventDefault();
+    checksessionok();
+});
+
 function login(event) {
     event.preventDefault();
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
 
     console.log(username,password);
+
     if (!check(username,password)) 
     {
         alert("Dati non validi");
@@ -25,12 +31,17 @@ function login(event) {
             console.log(data);
             sessionStorage.setItem('user', JSON.stringify(data));
             alert("Login avvenuto con successo");
-            window.location.href = "index.html";
+            window.location.href = "index.html";a
         })
         .catch(error => {
             console.log(error);
         });
     }
+}
+
+function checksessionok()
+{
+    if(sessionStorage.getItem('user') != null) window.location.href ='index.html';
 }
 
 function check(username,password)
@@ -41,3 +52,5 @@ function check(username,password)
 
     return regexpassword.test(password) && regex.test(username);
 }
+
+
