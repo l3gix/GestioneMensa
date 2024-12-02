@@ -1,11 +1,23 @@
 function newoperation()
 {
     var importo = document.getElementById("importo").value;
-    var data = document.getElementById("data").value;
+    var dataInput  = document.getElementById("data").value;
     var matricola = JSON.parse(sessionStorage.getItem('user')).matricola;
 
+
     var user = JSON.parse(sessionStorage.getItem('user'));
+
     importo = optionselect(importo);
+
+
+    if (!dataInput) {
+        alert("Inserisci una data valida.");
+        return;
+    }
+
+    //cambio formato data 
+    data = operazioneOnData(dataInput);
+    console.log(data);
 
     //console.log( importo );
     if(!validateimporto(importo,user.credito))
@@ -89,4 +101,11 @@ function validateimporto(importo, credito)
     const regex = /^\d+$/;
     if(credito + importo < 0) return 0;
     return regex.test(importo);
+}
+
+function operazioneOnData(data)
+{
+    // Trasforma il formato della data da YYYY-MM-DD a DD/MM/YYYY
+    const parts = data.split('-');
+    return `${parts[2]}/${parts[1]}/${parts[0]}`;
 }

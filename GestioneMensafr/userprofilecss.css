@@ -62,25 +62,10 @@ body {
 
 .profile
 {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     box-sizing: border-box;
 }
-
-/*
-.profile {
-    display: flex; /* Per centrare il contenuto 
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    background: #0077b6; /* Colore blu 
-    height: 80px; /* Altezza regolabile per maggiore evidenza 
-    width: 450px; /* Occupa tutta la larghezza del contenitore 
-    border-radius: 8px 8px 0 0; /* Angoli arrotondati solo sopra 
-    margin: -30px 0 20px 0; /* Allinea con il bordo superiore del contenitore bianco 
-    box-sizing: border-box; /* Include il padding nel calcolo della larghezza 
-    padding: 0; /* Nessun padding interno 
-}*/
 
 
 .login-button {
@@ -122,6 +107,7 @@ body {
     margin-bottom: 15px;
 }
 
+
 .input-group .icon {
     position: absolute;
     left: 10px; /* Sposta l'icona verso sinistra */
@@ -148,7 +134,39 @@ body {
     border-radius: 5px;
     font-size: 14px;
     box-sizing: border-box;
+    
 }
+
+
+/* Stile per la navbar */
+.navbar {
+    width: 100%;
+    height: 50px;
+    background-color: #1976d2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+    position: fixed; /* La navbar rimane fissa in alto */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Assicura che stia sopra gli altri elementi */
+
+}
+
+.navbar-left {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.navbar-left:hover{
+    color: #bbdefb;
+}
+
 
 
 

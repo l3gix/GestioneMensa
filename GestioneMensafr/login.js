@@ -50,6 +50,12 @@ function check(username,password)
     const regex = /.+/;
     console.log(regexpassword.test(password) && regex.test(username));
 
+    if(!regexpassword.test(password))
+        {
+            var descrizione = document.getElementById("descrizione");
+            descrizione.innerHTML = "Password non valida, deve essere lunga almeno 8 caratteri e contenere almeno un numero";
+        }
+
     return regexpassword.test(password) && regex.test(username);
 }
 

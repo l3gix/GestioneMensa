@@ -58,7 +58,13 @@ const regexpassword = /^(?=.*\d).{8,}$/;
 const regex = /.+/;
 t = regex.test(nome) && regex.test(cognome) && regex.test(username); // regex controllo almeno un carattere per ogni campo
 
-console.log(regexmatricola.test(matricola) && regexpassword.test(password) && t); // stampa in input
+console.log(regexmatricola.test(matricola) && regexpassword.test(password) && t); 
+
+if(!regexpassword.test(password))
+{
+    var descrizione = document.getElementById("descrizione");
+    descrizione.innerHTML = "Password non valida, deve essere lunga almeno 8 caratteri e contenere almeno un numero";
+}
 
 return regexmatricola.test(matricola) && regexpassword.test(password) && t; // return della regex della matricola e della password and t
 
